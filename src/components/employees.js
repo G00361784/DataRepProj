@@ -1,6 +1,5 @@
 // Employees.js
 import React from 'react';
-import Read from './read';
 import EmployeeInstance from './employeeInstance';
 
 function Employees(props) {

@@ -1,17 +1,22 @@
-
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import Header1 from './components/header1';
 import Create from './components/create';
-import EmployeeInstance from './components/employeeInstance';
 import Read from './components/read';
+
 function App() {
   return (
-    <div>
-      <Header1></Header1>
-      <Create></Create>
-      <EmployeeInstance></EmployeeInstance>
-      <Read/>
-    </div>
+    <BrowserRouter> {/* Wrap your app with BrowserRouter */}
+      <div>
+        <Header1 />
+
+        <Routes> {/* Define your routes */}
+          <Route path="/create" element={<Create />} /> 
+          <Route path="/read" element={<Read />} /> 
+          {/* You can add more routes here */}
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,15 +1,22 @@
 // EmployeeInstance.js
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import Card from 'react-bootstrap/Card'; 
+import axios from 'axios';
+
 
 function EmployeeInstance(props) {
+
+  const [data, setData] = useState([]); // Initialize state to hold the data
+
+
+  
   useEffect(() => {
     console.log("Employee Item:", props.myEmployee);
   }, [props.myEmployee]);
 
   // Check if props.myEmployee is defined before accessing its properties
   if (!props.myEmployee) {
-    return null; // Or a loading indicator
+    return null; 
   }
 
   return (
