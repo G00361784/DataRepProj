@@ -10,13 +10,13 @@ function App() {
   return (
     <BrowserRouter> 
       <div>
-        <Header1 />
+        {<Header1 />}
         <Routes> 
           <Route path="/create" element={<Create />} /> 
           <Route path="/read" element={<Read />} /> 
           <Route path="/editEmployee/:id" element={<EditEmployee />} /> 
           <Route path="/homepage" element={<HomePage />} /> 
-
+          <Route path="/" element={<HomePage />}/>
           
         </Routes>
       </div>
