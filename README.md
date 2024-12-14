@@ -24,6 +24,5 @@ This is my student project that demonstrates a basic employee management applica
     *   MongoDB (with Mongoose)
 Tools Used: 
 
-Gemini: for error checking and code generatation
-
-ClassNotes and class project:For reference and as a guid efor this project.
+*   **Gemini:** For error checking and code generation.
+*   **Class Notes and Class Project:** For reference and as a guide for this project.
