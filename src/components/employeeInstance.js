@@ -25,24 +25,19 @@ function EmployeeInstance(props) {
   };
 
   return (
-    <div>
-      <Card>
-        <Card.Header>{props.myEmployee.name}</Card.Header>
-        <Card.Body>
-          <blockquote className="blockquote mb-0">
-            <img src={props.myEmployee.image} alt={props.myEmployee.name} />
-            <footer>
-              Position: {props.myEmployee.position}<br />
-              Department: {props.myEmployee.department}
-            </footer>
-          </blockquote>
-          <Link to={"/editEmployee/" + props.myEmployee._id} className="btn btn-primary">
-            Edit
-          </Link>
-          <Button variant="danger" onClick={handleDelete}>Delete</Button>
-        </Card.Body>
-      </Card>
-    </div>
+    <Card> {/* Using Card component from React Bootstrap */}
+    <Card.Body>
+      <Card.Title>{props.myEmployee.name}</Card.Title>
+      <Card.Text>
+        <strong>Position:</strong> {props.myEmployee.position}<br />
+        <strong>Department:</strong> {props.myEmployee.department}
+      </Card.Text>
+      <Link to={"/editEmployee/" + props.myEmployee._id} className="btn btn-primary me-2"> {/* Added margin-right */}
+        Edit
+      </Link>
+      <Button variant="danger" onClick={handleDelete}>Delete</Button>
+    </Card.Body>
+  </Card>
   );
 }
 

@@ -5,8 +5,7 @@ const port = 4000;
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // Use express.json() for parsing JSON data
-
+app.use(express.json());
 
 const bodyParser = require('body-parser'); 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -82,6 +81,8 @@ app.post('/api/employees', async (req, res) => {
     res.status(400).json({ message: err.message }); 
   }
 });
+
+//delete an employee
 app.delete('/api/employees/:id', async (req, res) => {
   try {
     console.log('Deleting employee with ID:', req.params.id);
