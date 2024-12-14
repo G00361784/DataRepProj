@@ -1,7 +1,8 @@
 import React from 'react';
 
 function SearchBar({ searchTerm, handleSearch }) {
-  return (
+  // Render an input field for searching
+   return (
     <input
       type="text"
       placeholder="Search employees..."

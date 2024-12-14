@@ -5,6 +5,7 @@ import Create from './components/create';
 import Read from './components/read';
 import EditEmployee from './components/editEmployee';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HomePage from './components/homepage';
 function App() {
   return (
     <BrowserRouter> 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/create" element={<Create />} /> 
           <Route path="/read" element={<Read />} /> 
           <Route path="/editEmployee/:id" element={<EditEmployee />} /> 
+          <Route path="/homepage" element={<HomePage />} /> 
 
           
         </Routes>

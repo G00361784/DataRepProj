@@ -8,10 +8,10 @@ const Header1 = ()=>{
         <Navbar.Brand href="#home">G00361784</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto"> {/* Changed ml-auto to mr-auto */}
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/create">create</Nav.Link>
-            <Nav.Link href="/read">Modify and Read</Nav.Link>
+            <Nav className="mr-auto"> 
+            <Nav.Link href="/homepage">Home</Nav.Link>
+            <Nav.Link href="/create">Create employee</Nav.Link>
+            <Nav.Link href="/read">List of employees</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Navbar>
