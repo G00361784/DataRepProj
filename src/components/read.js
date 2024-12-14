@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from 'axios'; 
 import Employees from './employees';
 
 function Read() {
@@ -7,7 +8,29 @@ function Read() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setData([
+        const response = await axios.get('http://localhost:4000/api/employees'); 
+        setData(response.data); 
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []); 
+
+  return (
+    <div>
+      {data.length > 0 ? (
+        <Employees allEmployees={data} />
+      ) : (
+        <p>Loading employees...</p> 
+      )}
+    </div>
+  );
+}
+
+export default Read;
+/* setData([
           {
             "Name": "John Doe",
             "Position": "Software Engineer",
@@ -29,25 +52,4 @@ function Read() {
             "EmployeeID": "54321",
             "Image": "https://example.com/images/peter_jones.jpg" 
           }
-        ]); 
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  return (
-    <div>
-      {/* Conditionally render Employees only when data is available */}
-      {data.length > 0 ? ( 
-        <Employees allEmployees={data} /> 
-      ) : (
-        <p>Loading employees...</p> // Or a loading spinner
-      )}
-    </div>
-  );
-}
-
-export default Read;
+        ]);*/
