@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import EmployeeInstance from './employeeInstance';
 
 function Employees(props) {
-  // Check if props.allEmployees is defined before mapping
-  if (!props.allEmployees) {
-    return null; 
+  const [employees, setEmployees] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:4000/api/employees');
+      setEmployees(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handleReload = () => { 
+    fetchData();
+  };
+
+  if (!employees) {
+    return null;
   }
 
   return (
     <div>
-      {props.allEmployees.map((employee) => (
-        <EmployeeInstance 
-          myEmployee={employee} 
-          key={employee.EmployeeID || employee._id} // Use _id if EmployeeID is not present
+      {employees.map((employee) => (
+        <EmployeeInstance
+          myEmployee={employee}
+          key={employee._id}
+          Reload={handleReload} 
         />
       ))}
     </div>

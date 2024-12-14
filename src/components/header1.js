@@ -11,7 +11,7 @@ const Header1 = ()=>{
             <Nav className="mr-auto"> {/* Changed ml-auto to mr-auto */}
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/create">create</Nav.Link>
-            <Nav.Link href="/read">Read</Nav.Link>
+            <Nav.Link href="/read">Modify and Read</Nav.Link>
             </Nav>
         </Navbar.Collapse>
         </Navbar>
