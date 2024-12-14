@@ -13,13 +13,13 @@ function EmployeeInstance(props) {
   return (
     <div>
       <Card>
-        <Card.Header>{props.myEmployee.Name}</Card.Header> 
+        <Card.Header>{props.myEmployee.name}</Card.Header> 
         <Card.Body>
           <blockquote className="blockquote mb-0">
-            <img src={props.myEmployee.Image} alt={props.myEmployee.Name} />
+            <img src={props.myEmployee.image} alt={props.myEmployee.Name} />
             <footer>
-              Position: {props.myEmployee.Position}<br /> 
-              Department: {props.myEmployee.Department} 
+              Position: {props.myEmployee.position}<br /> 
+              Department: {props.myEmployee.department} 
             </footer>
           </blockquote>
         </Card.Body>

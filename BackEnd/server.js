@@ -6,8 +6,11 @@ const port = 4000;
 // Middleware
 app.use(cors());
 app.use(express.json()); // Use express.json() for parsing JSON data
-// No need for body-parser since Express v4.16+
 
+
+const bodyParser = require('body-parser'); 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); 
 const mongoose = require('mongoose');
 
 // Mongoose schema and model

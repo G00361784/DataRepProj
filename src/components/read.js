@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from 'axios'; 
+import axios from 'axios';
 import Employees from './employees';
 
 function Read() {
@@ -8,48 +8,26 @@ function Read() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/employees'); 
-        setData(response.data); 
+        const response = await axios.get('http://localhost:4000/api/employees');
+        setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, []); 
+  }, []);
 
   return (
     <div>
-      {data.length > 0 ? (
+      {/* Check if data is defined before accessing length */}
+      {data && data.length > 0 ? ( 
         <Employees allEmployees={data} />
       ) : (
-        <p>Loading employees...</p> 
+        <p>Loading employees...</p>
       )}
     </div>
   );
 }
 
 export default Read;
-/* setData([
-          {
-            "Name": "John Doe",
-            "Position": "Software Engineer",
-            "Department": "Technology",
-            "EmployeeID": "12345",
-            "Image": "https://example.com/images/john_doe.jpg" 
-          },
-          {
-            "Name": "Jane Smith",
-            "Position": "Data Analyst",
-            "Department": "Analytics",
-            "EmployeeID": "67890",
-            "Image": "https://example.com/images/jane_smith.jpg" 
-          },
-          {
-            "Name": "Peter Jones",
-            "Position": "Project Manager",
-            "Department": "Management",
-            "EmployeeID": "54321",
-            "Image": "https://example.com/images/peter_jones.jpg" 
-          }
-        ]);*/
